@@ -1,0 +1,36 @@
+{
+    "name":  "dsh-page-zoom",
+    "version":  "0.1.0",
+    "description":  "DeepSeek Harness Web UI 页面缩放插件：悬浮缩放栏（−/滑杆/+/百分比/重置）+ Ctrl+滚轮与 Ctrl+=/-/0 快捷键，范围 25%-300%，本地持久化。",
+    "type":  "module",
+    "main":  "index.js",
+    "exports":  {
+                    ".":  "./index.js",
+                    "./client":  "./client.js",
+                    "./package.json":  "./package.json"
+                },
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           },
+                "client":  {
+                               "platform":  "web"
+                           }
+            },
+    "files":  [
+                  "index.js",
+                  "client.js",
+                  "cordis.patch.yml",
+                  "README.md",
+                  "LICENSE"
+              ],
+    "keywords":  [
+                     "deepseek-harness",
+                     "dsh",
+                     "dsh-plugin",
+                     "zoom",
+                     "page-zoom",
+                     "ui"
+                 ],
+    "license":  "MIT"
+}
