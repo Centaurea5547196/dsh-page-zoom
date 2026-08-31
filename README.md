@@ -42,3 +42,6 @@ dsh plugin --profile web add dsh-page-zoom-0.1.0.tgz
 - 缩放值存于浏览器本地（与 dsh-chat-width 的「按浏览器记忆」一致），
   不写 `settings.yaml`，因此无需任何服务端命名空间补丁。
 
+## License
+
+MIT
