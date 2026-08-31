@@ -1,0 +1,5 @@
+# dsh-page-zoom bundle layer: one host row so the loader owns an entry and
+# the client module system serves the plugin's client bundle.
+- insert:
+    - id: dsh-page-zoom
+      name: dsh-page-zoom
