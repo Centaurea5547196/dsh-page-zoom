@@ -6,5 +6,5 @@ url: https://github.com/Centaurea5547196/dsh-page-zoom
 name: Centaurea5547196/dsh-page-zoom
 category: ui
 description:
-  en: Floating page-zoom bar for the DSH Web UI with Ctrl+wheel and Ctrl+=/-/0 shortcuts (25%-300%, persisted in localStorage).
-  zh: DSH Web UI 页面缩放悬浮栏：Ctrl+滚轮与 Ctrl+=/-/0 快捷键，25%-300% 范围，缩放值本地持久化。
+  en: Page zoom for the DSH Web UI: Ctrl+wheel and Ctrl+=/-/0 shortcuts (25%-300%, persisted in localStorage); floating bar hidden by default.
+  zh: DSH Web UI 页面缩放：Ctrl+滚轮与 Ctrl+=/-/0 快捷键，25%-300% 范围，缩放值本地持久化；悬浮栏默认隐藏。
