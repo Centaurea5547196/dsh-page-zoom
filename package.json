@@ -1,7 +1,7 @@
 {
   "name": "dsh-page-zoom",
-  "version": "0.1.0",
-  "description": "DeepSeek Harness Web UI 页面缩放插件：悬浮缩放栏（−/滑杆/+/百分比/重置）+ Ctrl+滚轮与 Ctrl+=/-/0 快捷键，范围 25%-300%，本地持久化。",
+  "version": "0.1.3",
+  "description": "DeepSeek Harness Web UI 页面缩放插件：Ctrl+滚轮 与 Ctrl+=/-/0 快捷键放大缩小页面，范围 25%-300%，本地持久化；悬浮栏默认隐藏。",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -26,9 +26,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<YOUR_GITHUB_USERNAME>/dsh-page-zoom.git"
+    "url": "git+https://github.com/Centaurea5547196/dsh-page-zoom.git"
   },
-  "homepage": "https://github.com/<YOUR_GITHUB_USERNAME>/dsh-page-zoom#readme",
+  "homepage": "https://github.com/Centaurea5547196/dsh-page-zoom#readme",
   "keywords": [
     "deepseek-harness",
     "dsh",

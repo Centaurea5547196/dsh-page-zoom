@@ -2,9 +2,9 @@
 
 DeepSeek Harness Web UI 的「页面缩放」客户端插件，像 PDF 阅读器/浏览器那样缩放整个页面：
 
-- 悬浮缩放栏：`−` `滑杆` `+` `百分比` `重置 100%` `设置`（默认右下角，可拖动、位置记忆）
 - 快捷键：`Ctrl+滚轮` 缩放；`Ctrl+=` / `Ctrl+-` 缩放；`Ctrl+0` 恢复 100%（与 Word/浏览器一致）
-- 范围 25%–300%，滑杆 1% 步进，按钮/滚轮按「步进」设置（Ctl+滚轮 5%，按钮 10%，可在设置里改为 1/5/10/20%）
+- **悬浮栏默认隐藏**（v0.1.3 起强制隐藏，不占任何界面空间）；缩放引擎、拖动与边界夹取逻辑仍在包内休眠，便于日后重新启用
+- 范围 25%–300%，`Ctrl+滚轮` 按「步进」缩放（默认 5%）
 - 缩放即时生效，持久化在浏览器 localStorage（按浏览器记忆，刷新/重启保留；卸载时不会残留服务端配置）
 - 对全屏对话框做了缩放补偿（`max-height: calc(100vh / zoom)`），放大时弹窗不会超出窗口
 
@@ -13,7 +13,7 @@ DeepSeek Harness Web UI 的「页面缩放」客户端插件，像 PDF 阅读器
 | 文件 | 作用 |
 |---|---|
 | `index.js` | host 半：仅提供插件行身份（无 Node 侧逻辑） |
-| `client.js` | browser 半：悬浮栏 + 快捷键 + 缩放引擎（lazy-CJS bundle，无需构建） |
+| `client.js` | browser 半：快捷键 + 缩放引擎（悬停栏代码休眠，lazy-CJS bundle，无需构建） |
 | `cordis.patch.yml` | bundle 层补丁：插入 `dsh-page-zoom` 行 |
 | `package.json` | `dsh.client.platform: web`，导出 `./client` |
 
@@ -21,7 +21,7 @@ DeepSeek Harness Web UI 的「页面缩放」客户端插件，像 PDF 阅读器
 
 ```powershell
 # 从本目录打包后安装到 web profile
-dsh plugin --profile web add dsh-page-zoom-0.1.0.tgz
+dsh plugin --profile web add dsh-page-zoom-0.1.3.tgz
 ```
 
 在 DSH Desktop 里：包放入 profile 的 `node_modules`，把 `dsh-page-zoom`
@@ -39,6 +39,7 @@ dsh plugin --profile web add dsh-page-zoom-0.1.0.tgz
 - 缩放通过 CSS `html{zoom}` 实现，等价于浏览器页面缩放（布局重排）。
 - 快捷键在 `window` 捕获阶段拦截，`preventDefault` 阻止浏览器自身
   Ctrl+滚轮缩放叠加。
+- v0.1.3 起加载时强制 `bar = false`，旧会话残留的 `bar: true` 不会让悬浮栏复活。
 - 缩放值存于浏览器本地（与 dsh-chat-width 的「按浏览器记忆」一致），
   不写 `settings.yaml`，因此无需任何服务端命名空间补丁。
 

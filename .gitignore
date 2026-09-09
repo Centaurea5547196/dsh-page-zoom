@@ -2,3 +2,13 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+
+# local dev artifacts (not part of the plugin)
+*.tgz
+work/
+edited.jpg
+edited.png
+source.jpg
+ak_cursor_registry_backup.txt
+reapply_cursor.ps1
+codex-deepseek-setup-en.ps1
